@@ -1,0 +1,18 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: sea-heart-auth
+  profiles:
+    active: dev
+  redis:
+    port: 6379
+    host: localhost
+# 注册中心配置
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://cc1:7001/eureka/,http://cc2:7002/eureka/

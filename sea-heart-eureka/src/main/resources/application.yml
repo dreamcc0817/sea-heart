@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: sea-heart-eureka
+---
+spring:
+  profiles: dreamcc-1
+server:
+  port: 7001
+eureka:
+  instance:
+    hostname: cc1
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://cc2:7002/eureka/
+
+---
+spring:
+  profiles: dreamcc-2
+server:
+  port: 7002
+eureka:
+  instance:
+    hostname: cc2
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://cc1:7001/eureka/
+

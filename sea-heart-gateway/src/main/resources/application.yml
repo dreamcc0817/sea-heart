@@ -1,0 +1,22 @@
+server:
+  port: 9999
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    ip-address: true
+spring:
+  application:
+    name: gateway9999
+  cloud:
+      gateway:
+        locator:
+          enabled: true
+        routes:
+        - id: demo
+          uri: lb://demo
+          predicates:
+          - Path=/demo/**
+          filters:
+          - StripPrefix=1
