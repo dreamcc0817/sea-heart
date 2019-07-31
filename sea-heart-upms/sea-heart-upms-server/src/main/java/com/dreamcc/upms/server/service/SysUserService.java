@@ -3,6 +3,7 @@ package com.dreamcc.upms.server.service;
 import cn.hutool.system.UserInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.dreamcc.upms.api.entity.SysUser;
+import com.dreamcc.upms.api.vo.UserVO;
 
 /**
  * @Title: sea-heart
@@ -19,4 +20,12 @@ public interface SysUserService extends IService<SysUser> {
 	 * @return
 	 */
 	UserInfo getUserInfo(SysUser sysUser);
+
+	/**
+	 * 通过ID查询用户信息
+	 *
+	 * @param id 用户ID
+	 * @return 用户信息
+	 */
+	UserVO getUserVoById(Integer id);
 }

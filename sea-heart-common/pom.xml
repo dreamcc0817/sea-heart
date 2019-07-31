@@ -14,6 +14,7 @@
     <modules>
         <module>sea-heart-common-core</module>
         <module>sea-heart-commone-security</module>
+        <module>sea-heart-common-log</module>
     </modules>
 
 </project>

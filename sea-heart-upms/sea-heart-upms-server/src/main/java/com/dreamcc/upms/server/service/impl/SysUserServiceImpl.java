@@ -23,4 +23,15 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDAO, SysUser> impleme
 		return null;
 	}
 
+	/**
+	 * 通过用户ID查询用户信息
+	 *
+	 * @param id 用户ID
+	 * @return
+	 */
+	@Override
+	public UserVO getUserVoById(Integer id) {
+		return baseMapper.getUserVoById(id);
+	}
+
 }
