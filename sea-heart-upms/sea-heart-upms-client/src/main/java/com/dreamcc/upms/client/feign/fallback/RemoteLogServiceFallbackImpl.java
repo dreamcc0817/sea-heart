@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 /**
  * @Title: sea-heart
  * @Package: com.dreamcc.upms.client.feign.fallback
- * @Description: 远程调用日志实现类
+ * @Description: 远程调用日志回调实现类
  * @Author: dreamcc
  * @Date: 2019/7/31 15:17
  * @Version: V1.0

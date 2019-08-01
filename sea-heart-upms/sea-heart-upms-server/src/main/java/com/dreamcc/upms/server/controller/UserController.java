@@ -2,15 +2,14 @@ package com.dreamcc.upms.server.controller;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.dreamcc.common.core.util.R;
+import com.dreamcc.common.log.annotation.SysLog;
 import com.dreamcc.common.security.annotation.Inner;
 import com.dreamcc.common.security.util.SecurityUtils;
 import com.dreamcc.upms.api.entity.SysUser;
 import com.dreamcc.upms.server.service.SysUserService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Title: sea-heart
@@ -69,5 +68,13 @@ public class UserController {
 	@GetMapping("/{id}")
 	public R user(@PathVariable Integer id) {
 		return new R<>(userService.getUserVoById(id));
+	}
+
+	@SysLog("删除用户信息")
+	@DeleteMapping("/{id}")
+	@PreAuthorize("@permission.hasPermission('sys_user_del')")
+	public R userDel(@PathVariable Integer id){
+		SysUser sysUser = userService.getById(id);
+		return new R<>(userService.removeById(sysUser));
 	}
 }

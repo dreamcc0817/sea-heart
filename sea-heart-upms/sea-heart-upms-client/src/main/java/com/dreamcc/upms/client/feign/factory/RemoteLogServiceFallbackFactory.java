@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * @Title: sea-heart
  * @Package: com.dreamcc.upms.client.feign.factory
- * @Description: 日志调用工厂类
+ * @Description: 日志回调地址工厂类
  * @Author: dreamcc
  * @Date: 2019/7/31 15:12
  * @Version: V1.0

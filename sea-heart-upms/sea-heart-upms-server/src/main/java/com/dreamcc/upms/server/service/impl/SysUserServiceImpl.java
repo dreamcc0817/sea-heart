@@ -6,6 +6,7 @@ import com.dreamcc.upms.api.entity.SysUser;
 import com.dreamcc.upms.api.vo.UserVO;
 import com.dreamcc.upms.server.dao.SysUserDAO;
 import com.dreamcc.upms.server.service.SysUserService;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
  * @Version: V1.0
  */
 @Service("userService")
+@AllArgsConstructor
 public class SysUserServiceImpl extends ServiceImpl<SysUserDAO, SysUser> implements SysUserService {
 	@Override
 	public UserInfo getUserInfo(SysUser sysUser) {
