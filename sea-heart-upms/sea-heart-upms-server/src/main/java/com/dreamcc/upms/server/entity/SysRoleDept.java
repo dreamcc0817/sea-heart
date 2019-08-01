@@ -1,4 +1,4 @@
-package com.dreamcc.upms.api.entity;
+package com.dreamcc.upms.server.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 /**
  * @Title: sea-heart
- * @Package: com.dreamcc.upms.api.entity
+ * @Package: com.dreamcc.upms.server.entity
  * @Description: 角色部门关系表
  * @Author: dreamcc
  * @Date: 2019/7/25 17:48

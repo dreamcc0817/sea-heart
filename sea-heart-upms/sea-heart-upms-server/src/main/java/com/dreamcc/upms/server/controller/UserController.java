@@ -5,7 +5,8 @@ import com.dreamcc.common.core.util.R;
 import com.dreamcc.common.log.annotation.SysLog;
 import com.dreamcc.common.security.annotation.Inner;
 import com.dreamcc.common.security.util.SecurityUtils;
-import com.dreamcc.upms.api.entity.SysUser;
+import com.dreamcc.upms.server.dto.UserDTO;
+import com.dreamcc.upms.server.entity.SysUser;
 import com.dreamcc.upms.server.service.SysUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 /**
  * @Title: sea-heart
  * @Package: com.dreamcc.upms.server.controller
- * @Description:
+ * @Description: 用户相关Controller
  * @Author: dreamcc
  * @Date: 2019/7/26 10:05
  * @Version: V1.0
@@ -70,11 +71,27 @@ public class UserController {
 		return new R<>(userService.getUserVoById(id));
 	}
 
+	/**
+	 * 删除用户信息
+	 *
+	 * @param id 用户id
+	 * @return
+	 */
 	@SysLog("删除用户信息")
 	@DeleteMapping("/{id}")
 	@PreAuthorize("@permission.hasPermission('sys_user_del')")
-	public R userDel(@PathVariable Integer id){
+	public R userDel(@PathVariable Integer id) {
 		SysUser sysUser = userService.getById(id);
 		return new R<>(userService.removeById(sysUser));
+	}
+
+	/**
+	 * 添加用户
+	 *
+	 * @param userDTO 用户信息
+	 * @return
+	 */
+	public R addUser(@RequestBody UserDTO userDTO) {
+		return new R<>(userService.saveUser(userDTO));
 	}
 }

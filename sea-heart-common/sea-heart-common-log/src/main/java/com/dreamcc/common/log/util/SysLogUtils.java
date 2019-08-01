@@ -32,7 +32,8 @@ public class SysLogUtils {
 	public SysLog getSysLog(){
 		//获取request信息
 		HttpServletRequest request = ((ServletRequestAttributes)Objects.requireNonNull(RequestContextHolder.getRequestAttributes())).getRequest();
-		SysLog sysLog = new SysLog();		sysLog.setCreateBy(Objects.requireNonNull(getUsername()));
+		SysLog sysLog = new SysLog();
+		sysLog.setCreateBy(Objects.requireNonNull(getUsername()));
 		sysLog.setType(CommonConstants.STATUS_NORMAL);
 		sysLog.setRemoteAddr(ServletUtil.getClientIP(request));
 		sysLog.setRequestUri(URLUtil.getPath(request.getRequestURI()));

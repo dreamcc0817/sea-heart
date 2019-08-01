@@ -1,4 +1,4 @@
-package com.dreamcc.upms.api.entity;
+package com.dreamcc.upms.server.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 
 /**
  * @Title: sea-heart
- * @Package: com.dreamcc.upms.api.entity
+ * @Package: com.dreamcc.upms.server.entity
  * @Description: 用户表
  * @Author: dreamcc
  * @Date: 2019/7/25 16:54

@@ -2,10 +2,11 @@ package com.dreamcc.upms.server.service.impl;
 
 import cn.hutool.system.UserInfo;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.dreamcc.upms.api.entity.SysUser;
-import com.dreamcc.upms.api.vo.UserVO;
 import com.dreamcc.upms.server.dao.SysUserDAO;
+import com.dreamcc.upms.server.dto.UserDTO;
+import com.dreamcc.upms.server.entity.SysUser;
 import com.dreamcc.upms.server.service.SysUserService;
+import com.dreamcc.upms.server.vo.UserVO;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +35,11 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDAO, SysUser> impleme
 	@Override
 	public UserVO getUserVoById(Integer id) {
 		return baseMapper.getUserVoById(id);
+	}
+
+	@Override
+	public Boolean saveUser(UserDTO userDTO) {
+		return null;
 	}
 
 }

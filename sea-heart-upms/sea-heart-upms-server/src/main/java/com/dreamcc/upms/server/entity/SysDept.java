@@ -1,4 +1,4 @@
-package com.dreamcc.upms.api.entity;
+package com.dreamcc.upms.server.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -11,40 +11,33 @@ import java.time.LocalDateTime;
 
 /**
  * @Title: sea-heart
- * @Package: com.dreamcc.upms.api.entity
- * @Description: 角色表
+ * @Package: com.dreamcc.upms.server.entity
+ * @Description: 部门表
  * @Author: dreamcc
- * @Date: 2019/7/25 17:00
+ * @Date: 2019/7/25 17:27
  * @Version: V1.0
  */
 @Data
-public class SysRole implements Serializable {
+public class SysDept implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * 主键ID
 	 */
-	@TableId(value = "role_id", type = IdType.AUTO)
-	private Integer roleId;
+	@TableId(value = "dept_id", type = IdType.AUTO)
+	private Integer deptId;
 
 	/**
-	 * 角色名称
+	 * 部门名称
 	 */
-	@NotBlank(message = "角色名称不能为空")
-	private String roleName;
+	@NotBlank(message = "部门名称不能为空")
+	private String name;
 
 	/**
-	 * 角色标识
+	 * 排序
 	 */
-	@NotBlank(message = "角色标识不能为空")
-	private String roleCode;
-
-	/**
-	 * 角色描述
-	 */
-	@NotBlank(message = "角色描述不能为空")
-	private String roleDesc;
+	private Integer sort;
 
 	/**
 	 * 创建时间
@@ -52,14 +45,18 @@ public class SysRole implements Serializable {
 	private LocalDateTime createTime;
 
 	/**
-	 * 更新时间
+	 * 修改时间
 	 */
 	private LocalDateTime updateTime;
 
 	/**
-	 * 删除标识（0-正常,1-删除）
+	 * 上级部门ID
+	 */
+	private Integer parentId;
+
+	/**
+	 * 是否删除  -1：已删除  0：正常
 	 */
 	@TableLogic
 	private String delFlag;
-
 }

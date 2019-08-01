@@ -1,6 +1,6 @@
-package com.dreamcc.upms.api.vo;
+package com.dreamcc.upms.server.vo;
 
-import com.dreamcc.upms.api.entity.SysRole;
+import com.dreamcc.upms.server.entity.SysRole;
 import lombok.Data;
 
 import java.io.Serializable;
