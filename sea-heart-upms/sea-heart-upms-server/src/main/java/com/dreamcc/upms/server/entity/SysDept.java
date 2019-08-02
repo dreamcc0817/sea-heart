@@ -29,6 +29,11 @@ public class SysDept implements Serializable {
 	private Integer deptId;
 
 	/**
+	 * 主键ID
+	 */
+	private Integer dept_parent_id;
+
+	/**
 	 * 部门名称
 	 */
 	@NotBlank(message = "部门名称不能为空")

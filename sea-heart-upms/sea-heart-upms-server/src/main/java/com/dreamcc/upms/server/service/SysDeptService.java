@@ -22,4 +22,11 @@ public interface SysDeptService extends IService<SysDept> {
 	 * @return
 	 */
 	List<DeptTree> listDeptTrees();
+
+	/**
+	 * 查询用户部门树
+	 *
+	 * @return
+	 */
+	List<DeptTree> listCurrentUserDeptTrees();
 }
