@@ -3,7 +3,7 @@ package com.dreamcc.common.core.constant;
 /**
  * @Title: sea-heart
  * @Package: com.dreamcc.common.core.constant
- * @Description:
+ * @Description: 公用常量
  * @Author: dreamcc
  * @Date: 2019/7/26 9:53
  * @Version: V1.0

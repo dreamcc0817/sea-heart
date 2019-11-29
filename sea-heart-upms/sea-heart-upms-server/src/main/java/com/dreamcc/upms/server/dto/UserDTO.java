@@ -20,6 +20,9 @@ public class UserDTO extends SysUser {
 	 */
 	private List<Integer> role;
 
+	/**
+	 * 部门ID
+	 */
 	private Integer deptId;
 
 	/**
